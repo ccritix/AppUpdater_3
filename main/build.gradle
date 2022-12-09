@@ -41,3 +41,8 @@ android {
         checkReleaseBuilds false
     }
 }
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    implementation dependenciesList.Appcompat
+}
