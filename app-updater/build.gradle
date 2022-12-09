@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 android {
 
@@ -29,4 +30,23 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation dependenciesList.Appcompat
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.druid.update'
+                artifactId = 'update'
+                version = '1.0.1'
+            }
+            debug(MavenPublication) {
+                from components.debug
+                groupId = 'com.druid.update'
+                artifactId = 'update'
+                version = '1.0.1'
+            }
+        }
+    }
 }
