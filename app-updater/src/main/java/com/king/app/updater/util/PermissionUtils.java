@@ -32,14 +32,17 @@ public enum PermissionUtils {
      * @return
      */
     public boolean verifyReadAndWritePermissions(@NonNull Activity activity,int requestCode){
-
-        int readResult = checkPermission(activity,Manifest.permission.READ_EXTERNAL_STORAGE);
-        int writeResult = checkPermission(activity,Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        if(readResult != PackageManager.PERMISSION_GRANTED || writeResult != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(activity,PERMISSIONS_STORAGE,requestCode);
-            return false;
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+            int readResult = checkPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE);
+            int writeResult = checkPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            if (readResult != PackageManager.PERMISSION_GRANTED || writeResult != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE, requestCode);
+                return false;
+            }
+            return true;
+        }else {
+            return true;
         }
-        return true;
     }
 
     public int checkPermission(@NonNull Activity activity,@NonNull String permission){
