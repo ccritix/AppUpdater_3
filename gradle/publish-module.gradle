@@ -10,7 +10,9 @@ version = getVersionNameFromTags()
 
 task generateSourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
-    classifier "sources"
+//    classifier "sources"
+    archiveClassifier.set("sources")
+
 }
 
 publishing {

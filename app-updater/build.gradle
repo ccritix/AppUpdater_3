@@ -3,10 +3,12 @@ apply plugin: 'maven-publish'
 
 android {
 
+    namespace 'com.king.app.updater'
     compileSdkVersion androidVersions.compileSdkVersion
-    buildToolsVersion androidVersions.buildToolsVersion
+//    buildToolsVersion androidVersions.buildToolsVersion
 
     defaultConfig {
+
         minSdkVersion androidVersions.minSdkVersion
         targetSdkVersion androidVersions.targetSdkVersion
         versionCode androidVersions.versionCode
