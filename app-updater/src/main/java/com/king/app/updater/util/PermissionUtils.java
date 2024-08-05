@@ -39,10 +39,8 @@ public enum PermissionUtils {
                 ActivityCompat.requestPermissions(activity, PERMISSIONS_STORAGE, requestCode);
                 return false;
             }
-            return true;
-        }else {
-            return true;
         }
+        return true;
     }
 
     public int checkPermission(@NonNull Activity activity,@NonNull String permission){
