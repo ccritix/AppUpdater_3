@@ -1,4 +1,4 @@
-package com.king.app.updater;
+Not mandatorypackage com.king.app.updater;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -23,7 +23,7 @@ import com.king.app.updater.util.PermissionUtils;
  */
 public class AppUpdater {
     /**
-     * {@link #mContext}不强制要求是{@link Activity}，但能传{@link Activity}尽量传。AppUpdater本应该只专注于App更新，尽量不涉及动态权限相关的处理。如果mContext传的是{@link Activity}，则默认会校验一次动态权限。
+     * {@link #mContext}Not mandatory{@link Activity}，But it can be transmitted{@link Activity}尽量传。AppUpdater本应该只专注于App更新，尽量不涉及动态权限相关的处理。如果mContext传的是{@link Activity}，则默认会校验一次动态权限。
      */
     private Context mContext;
     /**
@@ -68,7 +68,7 @@ public class AppUpdater {
      */
     public void start(){
         if(mConfig!=null && !TextUtils.isEmpty(mConfig.getUrl())){
-            //如果mContext是Activity,则默认会校验一次动态权限。
+            //if mContext yes Activity,By default, dynamic permissions will be checked once.
             if(mContext instanceof Activity){
                 PermissionUtils.INSTANCE.verifyReadAndWritePermissions((Activity) mContext,Constants.RE_CODE_STORAGE_PERMISSION);
             }
