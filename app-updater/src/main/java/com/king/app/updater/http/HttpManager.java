@@ -50,7 +50,7 @@ public class HttpManager implements IHttpManager {
 
 
     /**
-     * 异步下载任务
+     * Asynchronous download tasks
      */
     private class DownloadTask extends AsyncTask<Void,Integer,File> {
         private String url;
@@ -73,7 +73,7 @@ public class HttpManager implements IHttpManager {
 
         @Override
         protected File doInBackground(Void... voids) {
-            Log.i("TAG", "下载连接 " + url);
+            Log.i("TAG", "Download Link " + url);
 
             HttpURLConnection connect = null;
             try {
@@ -111,7 +111,7 @@ public class HttpManager implements IHttpManager {
                     while ((len = is.read(buffer)) != -1){
                         fos.write(buffer,0,len);
                         progress += len;
-                        //更新进度
+                        //Update progress
                         publishProgress(progress,length);
                     }
 
@@ -122,7 +122,7 @@ public class HttpManager implements IHttpManager {
                     connect.disconnect();
 
                     return file;
-                }else {//连接失败
+                }else {//Connection failed
                     throw new ConnectException(String.format("responseCode = %d",responseCode));
                 }
 
