@@ -16,50 +16,50 @@ public class UpdateConfig implements Parcelable {
 
     private String mUrl;
     /**
-     * 保存路径
+     * Save Path
      */
     private String mPath;
     /**
-     * 保存文件名
+     * Save file name
      */
     private String mFilename;
 
     /**
-     * 是否显示通知栏
+     * Whether to display the notification bar
      */
     private boolean isShowNotification = true;
     /**
-     * 下载完成后是否自动弹出安装
+     * Whether to automatically pop up the installation after downloading is complete
      */
     private boolean isInstallApk = true;
     /**
-     * 通知栏图标：默认取app图标
+     *Notification bar icon: default app icon
      */
     private int mNotificationIcon;
 
     /**
-     * 通知栏ID
+     * Notification bar ID
      */
     private int mNotificationId = Constants.DEFAULT_NOTIFICATION_ID;
 
     /**
-     * 通知栏渠道ID
+     * Notification channel ID
      */
     private String mChannelId;
     /**
-     * 通知栏渠道名称
+     * Notification channel name
      */
     private String mChannelName;
     /**
-     * 默认{@link Context#getPackageName() + ".fileProvider"}
+     * default{@link Context#getPackageName() + ".fileProvider"}
      */
     private String mAuthority;
     /**
-     * 下载失败是否支持点击通知栏重复下载
+     * If the download fails, can you click the notification bar to download again?
      */
     private boolean isReDownload = true;
     /**
-     * 是否显示百分比
+     * Whether to display percentage
      */
     private boolean isShowPercentage = true;
 
