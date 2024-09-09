@@ -10,7 +10,7 @@ public interface IHttpManager {
 
 
     /**
-     * 下载
+     * download
      * @param url
      * @param path
      * @param filename
@@ -21,33 +21,33 @@ public interface IHttpManager {
 
     interface DownloadCallback extends Serializable{
         /**
-         * 开始
+         * start
          * @param url
          */
         void onStart(String url);
 
         /**
-         * 加载进度…
+         * Loading progress…
          * @param progress
          * @param total
          */
         void onProgress(int progress,int total);
 
         /**
-         * 完成
+         * Finish
          * @param file
          */
         void onFinish(File file);
 
         /**
-         * 错误
+         * error
          * @param e
          */
         void onError(Exception e);
 
 
         /**
-         * 取消
+         * Cancel
          */
         void onCancel();
     }
